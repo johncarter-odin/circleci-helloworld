@@ -9,7 +9,7 @@ version: 2.1
 #           - hello/hello-build
 
 jobs:
-  build:
+  build1:
     docker: # use the docker executor type; machine and macos executors are also supported
       - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
     steps:
@@ -25,4 +25,12 @@ jobs:
         command: |
           env
           echo "hello again"
+
+workflows:
+  build_twice: # name of your workflow
+    jobs:
+      - build1
+      - build2:
+        requires:
+           - build1 # wait for build1 job to complete successfully before starting
 
