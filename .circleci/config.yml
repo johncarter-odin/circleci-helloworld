@@ -27,9 +27,10 @@ jobs:
           env
           echo "hello again"
 
-# workflows:
-#   build_twice: # name of your workflow
-#     jobs:
+workflows:
+  build_twice: # name of your workflow
+    jobs:
+      - build2
 #       - build1
 #       - build2:
 #         requires:
