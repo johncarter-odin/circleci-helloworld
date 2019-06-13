@@ -25,6 +25,10 @@ workflows:
   build1_and_build2:
     jobs:
       - build1
-      - build2:
+      - hold:
+          type: approval
           requires:
             - build1
+      - build2:
+          requires:
+            - hold
