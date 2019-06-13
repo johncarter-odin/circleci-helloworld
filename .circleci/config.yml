@@ -16,6 +16,7 @@ jobs:
 #       - checkout # check out the code in the project directory
 #       - run: echo "hello world" # run the `echo` command
 # 
+jobs:
   build2:
     docker:
       - image: circleci/node:4.8.2
